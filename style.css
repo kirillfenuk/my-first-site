@@ -1,0 +1,584 @@
+
+* {
+    margin: 0;/* внешний отступ */
+    padding: 0;/* внутренний отступ */
+}
+
+body{
+    background-color: rgb(31, 30, 29);
+    font-size: 16px;
+}
+h1{
+    font-weight: 500; /* жирность текста 100-900 */
+}
+
+h2{
+    font-weight: 400;
+}
+
+
+
+img{
+    width: 100%; /* ширина в процентах */
+}
+
+/* section{
+    margin: 0 15% 5% 15%;
+    background-color: rgb(255, 255, 255);
+}
+ */
+section p{
+    color: rgb(5, 5, 5);/* цвет текста */
+}
+
+/* Основные стили для контейнера */
+.blog-row__item{
+    min-width: 25%;
+    padding: 20px;
+    background-color: #caf19a;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.blog-row__item__top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+S
+.blog-row__item__logo{
+    width: 32px;
+}
+
+.blog-row__item__logo img{
+    width: 100%;
+}
+
+/* .blog-row__item__top h2{
+    
+} */
+
+/* .blog-row__item__date{
+    
+} */
+
+.blog-row__item__description{
+    margin: 20px 0;
+}
+
+/* .a{
+    
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* верхняя часть сайта */
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: rgb(150, 144, 144);
+    padding: 0 20px;
+}
+
+header p{
+    font-size: 24px;
+
+
+}
+
+.karate_logo{
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+}
+
+/* меню */
+nav{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* список */
+nav ul{
+    display: flex;
+    /* выравнивание по горизонтали    */
+    justify-content: space-between;
+}
+
+/* пункты списка */
+nav ul li{
+    padding: 10px 15px;
+    list-style: none;
+}
+
+
+/* текст списка */
+nav ul li a{
+    color: rgb(0, 0, 0);
+}
+
+
+.test-flex{
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    margin-bottom: 3000px;
+    background-color: aliceblue;
+}
+
+.flex{
+
+     width: 400px;
+     height: 400px;
+     background-color: brown;
+}
+
+.red-block{
+    width: 450px;
+    height:450px;
+    background-color: rgb(255, 0, 0);
+    position: relative;
+    
+}
+
+.orange-block{
+    width: 400px;
+    height: 400px;
+    background-color: orange;
+    position: absolute;
+}
+
+.yellow-block{
+    width: 350px;
+    height: 350px;
+    background-color: yellow;
+    position: absolute;
+}
+
+.green-block{
+    width: 300px;
+    height: 300px;
+    background-color: rgb(0, 255, 85);
+    position: absolute;
+}
+
+.blue-block{
+    width: 250px;
+    height: 250px;
+    background-color: rgb(0, 225, 255);
+    position: absolute;
+}
+
+.dark-blue-block{
+    width: 200px;
+    height: 200px;
+    background-color: rgb(4, 0, 255);
+    position: absolute;
+}
+
+.purple-block{
+    width: 150px;
+    height: 150px;
+    background-color: purple;
+    position: absolute;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+main {
+    background-color: rgb(255, 255, 255);
+}
+
+.hero{
+    margin: 0;
+    width: auto;
+    height: 90vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hero img{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+
+}
+
+.hero h1{
+    z-index: 2;
+    color: white;
+    font-weight: 600;/* жирность */
+    font-family: "Rubik Vinyl", system-ui;    /* шрифт */
+    font-size: 2rem;     /* rem размер шрифта  */
+    line-height: 2rem; /* высота строки */
+    letter-spacing: 5px; /* отступы между буквами */
+    word-spacing: 10px; /* отступы между словами */
+}
+
+.hero p{
+    font-size: 1rem;     /* rem размер шрифта  */
+    z-index: 10;
+    color: white;
+    line-height: 1rem;
+}
+
+
+.hero-p-bottom{
+    position: absolute;
+    width: 100%;
+    bottom: 30px;
+    text-align: center; /* делает текст по середини, можно слева, справа сделать */
+    text-transform: uppercase;/* делает текст заглавными */
+    text-decoration: underline;/* делает нижнее подчеркиванием */
+    -webkit-text-shadow: 2px 1px 0px rgba(255,  0,  0, 1);
+    -moz-text-shadow: 2px 1px 0px rgba(255,  0,  0, 1);
+    text-shadow: 2px 1px 0px rgba(255,  0,  0, 1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* главная секция с карточками */
+.section-main{
+    width: 100%;
+    display: flex;
+}
+
+
+section {
+    /* отступ сверху */
+    margin-bottom: 30px;
+}
+
+/* карточка секция */
+.section-item {
+    width: 50%;
+    background-color: rgb(255, 255, 255);
+}
+
+
+.section-item h2{
+    text-align: center;
+    padding: 20px;
+}
+
+
+
+.section-item p{
+    padding: 20px;/* padding внутренний отступ */
+}
+
+
+.karate span{
+    font-size: 1.2rem;
+    color: #b46600;
+}
+
+
+.karate p span.karate-p-green{ 
+    color: green;
+}
+
+
+.karate strong{
+    font-size: 1.2rem;
+    color: aqua;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#one{
+    background-color: aqua;
+}
+
+
+
+
+footer {
+/*     height: 400px; */
+    background-color: black;
+    display: flex;
+    padding: 20px;
+}
+
+footer p{
+    color: white;
+}
+
+/* .footer-left{
+    width: 100px;
+    height: 100px;
+    border: 1px solid red;
+    border-radius: 20px;
+    margin: 0 10px;
+}
+
+.footer-right{
+    width: 100px;
+    height: 100px;
+    border: 1px solid green;/* толщина обводки */
+    /* border-radius: 20px; скругляет объекты */
+/* } */
+
+
+
+.footer-left-block{
+    width: 30%;
+    height: 250px;
+    position: relative;
+
+}
+
+
+.footer-left-block img{
+    width: auto;
+    height: 100%;
+}
+
+
+
+.footer-left-block h2{
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    font-size: 32px;
+    text-shadow: 7px 5px 5px rgba(0, 0, 0, 0.74);
+}
+
+
+
+
+.footer-right-block{
+    width: 70%;
+    height: 250px;
+    display: flex;
+    justify-content: space-between;
+    
+    
+}
+
+
+.footer-right-block-item{
+    width: 30%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #1F1F1F;
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    
+}
+
+
+
+.footer-right-block-item h3{
+    color: white;
+    margin-bottom: 10px;
+}
+
+
+
+.footer-right-block-item ul{
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+
+
+.footer-right-block-item ul li{
+    list-style: none;  
+    color: white;
+    margin-bottom: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.form-send{
+/*     width: 700px; */
+    /* background-color: bisque; */
+}
+
+.form-send form{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    padding: 20px;
+    background: linear-gradient(45deg, #30cfd0, #330867);
+}
+
+.uslovia{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* стили для страницы регестрации */
+input{
+    width: 50%;
+    margin: 5px;
+    padding: 10PX 20px 10px 5px;/* внутренние отстуты сверху, справа, снизу, слева по часовой стрелке */
+}
+
+label{
+    color:black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* - - - - - страница блог - - - - - */
+/* - - - - - страница блог - - - - - */
+/* - - - - - страница блог - - - - - */
+article{
+    width: 30%;
+    height: 200px;
+    background-color: aqua;
+    margin: 20px 0;
+}
+
+.blog-container{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.blog-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: bisque;
+}
+
+
+
+.blog-row__item__main img{
+    height: 100px;
+    object-fit: cover;
+}
+
+
+
+
+

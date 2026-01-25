@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    
+
+    <style>
+        body {
+            margin: 0 10%;
+        }
+
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);/* кол-во колонок на экране*/
+            grid-template-rows: repeat(3, 1fr);/* кол-во строк в колонке */
+            gap: 10px/* растояние между */
+
+        }
+
+        .grid-item {
+            padding: 20px;
+            background-color: green;
+            color: rgb(0, 0, 0);
+        }
+
+
+        .blog-row__item__main img{
+            width: 100%;
+        }
+
+
+        .blog-row__item__bottom{
+            display: flex;
+            justify-content: space-between;
+        }
+
+
+        /*.card-1{
+            grid-column: span 2; объединяет карточки по колонкам
+            grid-row: span 2; /объединяет карточки по строчкам
+        } */
+
+        @media (max-width: 1200px) {
+            .grid-container {
+                 grid-template-columns: repeat(2, 1fr);/* кол-во колонок на экране*/
+                 grid-template-rows: auto;
+            }
+
+            .grid-item {
+                background-color: aqua;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+            .grid-container {
+                 grid-template-columns: repeat(1, 1fr);/* кол-во колонок на экране*/
+                 grid-template-rows: auto;
+            }
+
+            .grid-item {
+                background-color: blue;
+            }
+        }
+
+        
+    </style>
+
+    <div class="grid-container">
+        <div class="grid-item card-1">
+            
+            <div class="blog-row__item__top">
+                <h2>Subnautica 2 перенесли. По данным Джейсона Шрейера — чтобы не выплачивать
+                сотрудникам гигантский бонус</h2>
+            </div>
+
+            <div class="blog-row__item__main">
+                <p>На днях из студии Unknown Worlds уволили трёх ключевых авторов Subnautica. Теперь стали ясны причины: сиквел игры перенесли</p>
+                <img src="img/subnatika.jpg" alt="фото игры">
+            </div>
+
+            <div class="blog-row__item__bottom">
+                <div class="blog-row__item__bottom__data">
+                    <p>17.07.25</p>
+                </div>
+                <div class="blog-row__item__bottom__comment">
+                    <p>просмотры: 0</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="grid-item card-2">
+            <div class="blog-row__item__top">
+                <h2>Автономный графический планшет Wacom MovinkPad на Android оценили в $449</h2>
+            </div>
+
+            <div class="blog-row__item__main">
+                <p>Компания Wacom представила Android-планшет MovinkPad для художников и дизайнеров.</p>
+                <img src="img/laptop.jpg" alt="фото планшета">
+            </div>
+
+            <div class="blog-row__item__bottom">
+                <div class="blog-row__item__bottom__data">
+                    <p>10.07.25</p>
+                </div>
+                <div class="blog-row__item__bottom__comment">
+                    <p>просмотры: 10</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="grid-item card-3">
+            <div class="blog-row__item__top">
+                <h2>AOC выпустила серию недорогих мониторов Essential E4 для дома и офиса</h2>
+            </div>
+
+            <div class="blog-row__item__main">
+                <p>В каталоге бренда AOC появилась серия мониторов Essential E4, ориентированная на решение рабочих задач.</p>
+                <img src="img/monitor.jpg" alt="фото монитора">
+            </div>
+
+            <div class="blog-row__item__bottom">
+                <div class="blog-row__item__bottom__data">
+                    <p>17.07.25</p>
+                </div>
+                <div class="blog-row__item__bottom__comment">
+                    <p>просмотры: 1</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="grid-item card-4">
+            <div class="blog-row__item__top">
+                <h2>AMD Ryzen AI 5 330 для бюджетных ноутбуков получил мощный ИИ-модуль</h2>
+            </div>
+
+            <div class="blog-row__item__main">
+                <p>Компания AMD представила процессор Ryzen AI 5 330, который позиционирует как решение для недорогих ноутбуков.</p>
+                <img src="img/amd.jpg" alt="фото процессора">
+            </div>
+
+            <div class="blog-row__item__bottom">
+                <div class="blog-row__item__bottom__data">
+                    <p>17.07.25</p>
+                </div>
+                <div class="blog-row__item__bottom__comment">
+                    <p>просмотры: 8</p>
+                </div>
+            </div>
+        </div>
+
+
+        
+        <div class="grid-item card-5">
+            <div class="blog-row__item__top">
+                <h2>Nothing Phone (3) оказался прочнее, чем ожидалось</h2>
+            </div>
+
+            <div class="blog-row__item__main">
+                <p>Техноблогер Зак Нельсон протестировал смартфон Nothing Phone (3) на прочность и разобрал его, чтобы оценить ремонтопригодность.</p>
+                <img src="img/nothingphone.jpg" alt="фото телефона">
+            </div>
+
+            <div class="blog-row__item__bottom">
+                <div class="blog-row__item__bottom__data">
+                    <p>17.07.25</p>
+                </div>
+                <div class="blog-row__item__bottom__comment">
+                    <p>просмотры: 9</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="grid-item card-6">
+            <div class="blog-row__item__top">
+                <h2>Для Cyberpunk 2077 вышел ещё один «последний патч» — с новыми машинами, автопилотом и очередными исправлениями</h2>
+            </div>
+
+            <div class="blog-row__item__main">
+                <p>Не проходит года, чтобы Cyberpunk 2077 не получила очередной «самый последний» патч.</p>
+                <img src="img/cyberpunk.jpg" alt="фото игры">
+            </div>
+
+            <div class="blog-row__item__bottom">
+                <div class="blog-row__item__bottom__data">
+                    <p>17.07.25</p>
+                </div>
+                <div class="blog-row__item__bottom__comment">
+                    <p>просмотры: 26</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="grid-item card-7">
+                        <div class="blog-row__item__top">
+                <h2>Процессоры Intel Raptor Lake оказались «метеозависимыми»</h2>
+            </div>
+
+            <div class="blog-row__item__main">
+                <p>Инженер компании Mozilla Габриэле Свелто опубликовал любопытную статистику сбоев в работе процессоров семейства Intel Raptor Lake.</p>
+                <img src="img/intel.jpg" alt="фото процессора">
+            </div>
+
+            <div class="blog-row__item__bottom">
+                <div class="blog-row__item__bottom__data">
+                    <p>17.07.25</p>
+                </div>
+                <div class="blog-row__item__bottom__comment">
+                    <p>просмотры: 20</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="grid-item card-8">
+                        <div class="blog-row__item__top">
+                <h2>Google анонсировала презентацию серии Pixel 10 и других новинок</h2>
+            </div>
+
+            <div class="blog-row__item__main">
+                <p>Компания анонсировала презентацию Made by Google, на которой покажет серию смартфонов Pixel 10.</p>
+                <img src="img/pixel10.jpg" alt="фото телефона">
+            </div>
+
+            <div class="blog-row__item__bottom">
+                <div class="blog-row__item__bottom__data">
+                    <p>17.07.25</p>
+                </div>
+                <div class="blog-row__item__bottom__comment">
+                    <p>просмотры: 18</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="grid-item card-9">
+                        <div class="blog-row__item__top">
+                <h2>Tesla выпустила электрокары Model YL и Model 3 Plus с увеличенным запасом хода</h2>
+            </div>
+
+            <div class="blog-row__item__main">
+                <p>Tesla представила новые версии своих самых продаваемых электрокаров.</p>
+                <img src="img/tesla.jpg" alt="фото машины">
+            </div>
+
+            <div class="blog-row__item__bottom">
+                <div class="blog-row__item__bottom__data">
+                    <p>17.07.25</p>
+                </div>
+                <div class="blog-row__item__bottom__comment">
+                    <p>просмотры: 16</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+                                                    
+</body> 
+
+</html>

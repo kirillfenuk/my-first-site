@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(37, 37, 37);
+            color: white;
+        }
+
+        button{
+            padding: 5px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Привет</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, vitae?</p>
+    <button onclick="alert('Ты нажал на кнопку')">Нажми</button>
+
+    <!-- Скрипт можно писать прямо в HTML через тег script -->
+    <!-- <script>
+        let myH = document.querySelector('h1')
+        
+        myH.addEventListener('click', () => {
+            myH.style.color = 'yellow'
+            myH.style.fontSize = '100px'
+
+        })
+    </script> -->
+
+    <!-- Второй вариант подключения через отдельный файл в самом низу -->
+<!--     <script src="/js/first.js"></script> -->
+     <script src="/js/my-condition.js"></script>
+</body>
+
+</html>

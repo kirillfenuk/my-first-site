@@ -87,17 +87,17 @@ if (ball >= 90) {
 let role = prompt('Введиите свою роль (администратор, модератор, пользователь)')
 
 
-if (role == 'администратор') {
-    let confirmed = confirm(`Вы хотите войти как ${role}?`)
-    console.log('Доступ к админ-панели предоставлен');
-} else if (role == 'модератор') {
-    let confirmed = confirm(`Вы хотите войти как ${role}?`)
-    console.log('Доступ к модерации предоставлен');
-} else if (role == 'пользователь') {
-    let confirmed = confirm(`Вы хотите войти как ${role}?`)
-    console.log('Доступ к пользовательскому интерфейсу предоставлен');
-} else {
-    console.log('Доступ запрещен');
-}
+// if (role == 'администратор') {
+//     let confirmed = confirm(`Вы хотите войти как ${role}?`)
+//     console.log('Доступ к админ-панели предоставлен');
+// } else if (role == 'модератор') {
+//     let confirmed = confirm(`Вы хотите войти как ${role}?`)
+//     console.log('Доступ к модерации предоставлен');
+// } else if (role == 'пользователь') {
+//     let confirmed = confirm(`Вы хотите войти как ${role}?`)
+//     console.log('Доступ к пользовательскому интерфейсу предоставлен');
+// } else {
+//     console.log('Доступ запрещен');
+// }
 
 

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="theme-toggle">Смена темы</button>
+
+    <h1 id="first">Тест JS</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id, ea.</p>
+    <h2>Lorem ipsum dolor sit amet.</h2>
+
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle')
+        const body = document.body
+        const h1 = document.querySelector('h1')
+        const p = document.querySelector('p')
+        const h2 = document.querySelector('h2')
+
+        let isActive = false
+
+        toggleBtn.addEventListener('click', () => {
+            if (isActive) {
+                body.style.backgroundColor = 'white'
+                h1.style.color = 'black'
+                p.style.color = 'black'
+                h2.style.color = 'black'
+                isActive = false
+            } else {
+                body.style.backgroundColor = 'black'
+                h1.style.color = 'white'
+                p.style.color = 'white'
+                h2.style.color = 'white'
+                isActive = true
+            }
+        })
+
+    </script>
+</body>
+
+</html>

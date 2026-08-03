@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .new-class-two {
+            font-size: 32px;
+            text-align: right;
+            color: green;
+        }
+
+        .new-class-btm {}
+    </style>
+</head>
+
+<body>
+    <!-- <P>Lorem ipsum dolor sit amet.</P> --> <!-- до этого был textContent для взятия наполнения -->
+    <!--     <input type="text" placeholder="Напишите текст" value=" текст в input"> --> <!-- value для наполнения -->
+
+    <!--     <p id="simple-text">Обычный текст</p>
+
+    <button id="btn" class="btn">Кнопка</button>
+    <p id="text" class="active">Lorem ipsum dolor sit amet.</p> -->
+
+    <!-- Теоретические примеры -->
+    <!--     <script>
+        let input = document.querySelector('input[type="text"]') // обращение к input именно c type="text"
+
+        input.placeholder = 'Новый текст в placeholder' // изменит текст placeholder на новый
+        input.value = 'Новый текст в value' // изменит текст на новый (можнозаком. и увидим placeholder 
+        console.log(input.value); // есди нужно вывести в консоль
+
+
+        console.log(input.hasAttribute('data-toggle')) // Проверит есть ли у input атрибут data-toggle будет false
+        console.log(input.hasAttribute('placeholder')) // Тут выведет true
+
+
+        /* Условие для проверки есть  ли у тега определённый атрибут */
+        if (input.hasAttribute('data-toggle')) {
+            console.log('У input есть атрибут: data-toggle')
+        } else {
+            console.log('У input нет атрибута: data-toggle')
+        }
+
+
+        const value = input.getAttribute('type') // Получили значение
+        input.setAttribute('type', 'password') // Установить новое значение
+        input.removeAttribute('calss') // Удалить атрибут
+
+
+        input.classList.add('active') // Добавить класс (не добавляет дубликаты)
+        input.classList.toggle('active') // Переключить класс (добавить если нет, удалить если есть)
+        input.classList.contains('active') // Проверить наличие класса (возращает true/false)
+        input.classList.replace('old-class', 'new-class') // Заменить один класс другим
+        input.classList.remove('active') // Удалить класс (безопасно, даже если класса нет)
+    </script> -->
+
+
+    <!--     <script>
+        let simpleText = document.getElementById("simple-text")
+
+        simpleText.style.color = 'orange' // Меняем цвет текста
+        simpleText.style.fontSize = '32px' // ВАЖНО если в css 2 слова, то в JS пишем их слитно
+        simpleText.style.textAlign = 'centre' // Добавляем отступы
+
+        simpleText.addEventListener('click', () => {
+            simpleText.removeAttribute('style') // Убираем все стили, давленные через JS
+            simpleText.classList.add('new-class-two') // Добавляем новый класс из CSS
+        })
+    </script> -->
+
+    <!-- Переключение темы текста. Условие: Есть текст и кнопка. При нажатии на кнопку: если у текста нет класса active – добавить его, если класс уже есть – удалить, вывести в консоль, активен класс или нет. Использовать только classList. -->
+    <!-- 
+    <script>
+        let btn = document.getElementById('btn')
+        let text = document.getElementById('text')
+        let isActive = true
+
+        btn.addEventListener('click', () => {
+            if (isActive) {
+                text.classList.toggle('active')
+                console.log('Класс active активен')
+                isActive = false
+            } else {
+                text.classList.toggle('active')
+                console.log('Класс active не активен')
+                isActive = true
+            }
+        })
+
+    </script> -->
+
+
+
+    <!-- При клике на текст: Удалить все inline-стили, Заменить класс old-style на new-style -->
+
+    <!--     <p id="text" class="old-style" style="background-color: green;">Кликни по тексту</p>
+
+
+   <style>
+       .old-style {
+           color: gray;
+       }
+
+
+       .new-style {
+           color: green;
+           font-size: 28px;
+           text-align: right;
+       }
+   </style>
+
+   <script>
+    let p  = document.getElementById('text')
+    p.addEventListener('click', () => {
+        p.removeAttribute('style')
+        p.classList.replace('old-style', 'new-style')
+    })
+
+   </script> -->
+
+
+    <!-- 
+        если у input есть placeholder – заменить его текст
+        если нет – добавить новый
+        вывести результат проверки в консоль
+    -->
+
+    <input type="text">
+    <button>Изменить placeholder</button>
+
+    <script>
+        let input = document.querySelector('input')
+        let btn = document.querySelector('button')
+
+        btn.addEventListener('click', () => {
+            if (input.hasAttribute('placeholder')) {
+                input.placeholder = 'Текст изменён'
+                console.log('Текст изменён');
+                
+            } else {
+                input.setAttribute('placeholder', 'Новый текст')
+                console.log('placeholder добавлен');
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>

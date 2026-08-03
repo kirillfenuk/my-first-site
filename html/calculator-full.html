@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+        }
+
+
+        .calculator {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+
+        .calculator-display {
+            width: 100%;
+            height: 40px;
+            font-size: 1.5rem;
+            text-align: right;
+            margin-bottom: 10px;
+            padding-right: 10px;
+            border: none;
+            background-color: #eaeaea;
+        }
+
+
+        .calculator-buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+
+        .btn {
+            background-color: #f9f9f9;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            padding: 15px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+
+        .btn:hover {
+            background-color: #dcdcdc;
+        }
+
+
+        .operation {
+            background-color: #ffab00;
+        }
+
+
+        .operation:hover {
+            background-color: #ff9800;
+        }
+
+
+        .clear {
+            grid-column: span 4;
+            background-color: #ff5252;
+        }
+
+
+        .clear:hover {
+            background-color: #ff1744;
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="calculator">
+        <input type="text" class="calculator-display" id="display" disabled>
+        <div class="calculator-buttons">
+            <button class="btn" onclick="appendNumber('7')">7</button>
+            <button class="btn" onclick="appendNumber('8')">8</button>
+            <button class="btn" onclick="appendNumber('9')">9</button>
+            <button class="btn operation" onclick="chooseOperation('/')">/</button>
+
+
+            <button class="btn" onclick="appendNumber('4')">4</button>
+            <button class="btn" onclick="appendNumber('5')">5</button>
+            <button class="btn" onclick="appendNumber('6')">6</button>
+            <button class="btn operation" onclick="chooseOperation('*')">*</button>
+
+
+            <button class="btn" onclick="appendNumber('1')">1</button>
+            <button class="btn" onclick="appendNumber('2')">2</button>
+            <button class="btn" onclick="appendNumber('3')">3</button>
+            <button class="btn operation" onclick="chooseOperation('-')">-</button>
+
+
+            <button class="btn" onclick="appendNumber('0')">0</button>
+            <button class="btn" onclick="appendNumber('.')">.</button>
+            <button class="btn" onclick="computeResult()">=</button>
+            <button class="btn operation" onclick="chooseOperation('+')">+</button>
+
+
+            <button class="btn clear" onclick="clearDisplay()">C</button>
+        </div>
+    </div>
+
+
+    <!-- скрипт калькулятора -->
+    <script>
+        // Переменные для рабооты с цифрами
+        const display = document.getElementById('display') // путь до  дисплея
+        let firstOperand = ''           // первый ввод пользователя
+        let secondOperand = ''           // второй ввод пользователя
+        let currentOperarion = null     // текущая операция (+, -, *, /)
+        let shouldResetDisplay = false  // флаг для очистки дисплея
+
+        // Добавляет нажатую цифру в строку на дисплее калькулятора
+        function appendNumber(number) {
+            if (shouldResetDisplay) {
+                display.value = ''
+                shouldResetDisplay = false
+            }
+            if (number === '.' && display.value.includes('.')) return
+            if (display.value === '0' && number !== '.') {
+                display.value = ''
+            }
+            display.value += number
+        }
+
+        // Сохраняет первое число и делает выбор операции (+, -, *, /)
+        function chooseOperation(operation) {
+            if (currentOperarion !== null) computeResult()
+            firstOperand = display.value // Добавляем число  на дисплее в переменную
+            currentOperarion = operation
+            shouldResetDisplay = true // Очищаем  дисплей чтобы можно было ввести второе  число
+        }
+
+        // Вычисление результата текущей операции и отображение на дисплее
+        function computeResult() {
+            // Проверяем есть ли текущая операция и не нужнно ли сбрасывать дисплей
+            // Если условий нет -выходим из функции (ничего не вычисляем)
+            if (currentOperarion === null || shouldResetDisplay) return
+
+
+            // Получаем  второе число с дисплея калькулятора
+            secondOperand = display.value
+
+            // Преобразуем оба операнда в числа с плавающей точкой
+            // firstOperand - было сохранено при выборе операции
+            // seconOperand - текущее значение на дисплее
+            const firstOperand = Number(firstOperand)
+            const secondOperand = Number(secondOperand)
+
+
+            // Проверяем что оба числа валиды (не NaN)
+            // Если хотя бы одно не число - очищаем и выходим
+            if (isNaN(firstOperandParsed) || isNaN(secondOperandParsed)) {
+                display.value = ''
+                return
+            }
+
+            // ОбЪявляем переменную для результата
+            let result
+
+            // Выбираем операцию в зависимости от currentOperation и выполняем соответствующее вычисление
+            // Сложение
+            if (currentOperarion == '+')
+                result = firstOperandParsed + secondOperandParsed
+            // Вычитание
+            else if (currentOperarion == '-')
+                result = firstOperandParsed - secondOperandParsed
+            // Умножение
+            else if (currentOperarion == '*')
+                result = firstOperandParsed * secondOperandParsed
+            // Деление
+            else if (currentOperarion == '/')
+                result = firstOperandParsed / secondOperandParsed
+            else
+                result = ''
+
+            // Вывдим результат на дисплей колькулятора
+            display.value = result
+
+            // Сбрасываем текущую операцию (вычисление завершено потому что)
+            currentOperarion = null
+        }
+
+
+
+
+        // Очистка диспалея и сбрасывание всех переменных
+        function clearDisplay() {
+            display.value = '0'
+            firstOperand = ''
+            secondOperand = ''
+            currentOperarion = null
+            shouldResetDisplay = false
+        }
+    </script>
+
+
+
+    <!-- скрипт калькулятора улучшенный -->
+    <!--     <script>
+        let currentInput = ''
+        let previousInput = ''
+        let operation = null
+        const display = document.getElementById('display')
+
+        function updateDisplay() {
+            display.value = currentInput || '0'
+        }
+
+        function appendNumber(number) {
+            if (number === '.' && currentInput.includes('.')) return // Сделана для того точку можно было поставить только один раз
+            if (currentInput === '0' && number !== '.') currentInput = '' // Заменяет ноль после сброса на введённое  число
+            currentInput += number
+            updateDisplay()
+        }
+
+        function clearDisplay() {
+            currentInput = ''
+            updateDisplay()
+        }
+    </script> -->
+</body>
+
+</html>

@@ -32,10 +32,22 @@
 <body>
     <h1>Привет</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, vitae?</p>
-    <button onclick="alert('Ты нажал на кнопку')">Нажми</button>
+    <!-- <button onclick="alert('Ты нажал на кнопку')">Нажми</button> -->
+
+
+<!--     <button onclick="startProcessing()">Ввести числа</button> -->
+    
+
+
+    <!-- Кнопки для микроволновки -->
+<!--     <div class="container">
+        <button onclick="startMicrowave()">Запуск микроволновки</button>
+        <button onclick="stopMicrowave()">Остановка микроволновки</button>
+    </div> -->
+
 
     <!-- Скрипт можно писать прямо в HTML через тег script -->
-    <!-- <script>
+    <script>
         let myH = document.querySelector('h1')
         
         myH.addEventListener('click', () => {
@@ -43,11 +55,27 @@
             myH.style.fontSize = '100px'
 
         })
-    </script> -->
+    </script>
+    <br>
+
+    <!-- <p>Вот что приготовил повар <b id="dish-finish"></b></p> -->
 
     <!-- Второй вариант подключения через отдельный файл в самом низу -->
 <!--     <script src="/js/first.js"></script> -->
-     <script src="/js/my-condition.js"></script>
+     <!-- <script src="/js/my-for.js"></script> -->
+        <script src="/js/my-array.js"></script>
+
+    <script>
+        const body = document.body
+        const h1 = document.querySelector('h1')
+        const p = document.querySelector('p')
+
+        body.style.backgroundColor = 'black'
+        h1.style.color = 'white'
+        p.style.color = 'white'
+
+
+    </script>
 </body>
 
 </html>

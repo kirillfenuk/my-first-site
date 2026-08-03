@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <button id="add-new-element-in-array">Добавить в инвентарь новый объект</button>
+
+    <script>
+        const fruits = ['Apple', 'Banana']
+
+        // push - добавляет в конец новый элемент
+        fruits.push('Orange')
+        console.log(fruits)
+
+        document.getElementById('add-new-element-in-array').addEventListener('click', () =>{
+            fruits.push(prompt('Что добавим?'))
+            console.log(fruits)            
+        })
+        
+    </script>
+</body>
+</html>

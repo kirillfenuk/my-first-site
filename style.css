@@ -166,7 +166,7 @@ nav ul li a{
     width: 450px;
     height:450px;
     background-color: rgb(255, 0, 0);
-    position: relative;
+    position: relative; position: relative; /* ограничивает перемещение absolute, это граница для absolute */
     
 }
 
@@ -174,7 +174,7 @@ nav ul li a{
     width: 400px;
     height: 400px;
     background-color: orange;
-    position: absolute;
+    position: absolute; position: absolute; /* объект может передвигается по всей странице если не задан relative */
 }
 
 .yellow-block{
@@ -232,7 +232,7 @@ main {
     margin: 0;
     width: auto;
     height: 90vh;
-    position: relative;
+    position: relative;/* ограничивает перемещение absolute, это граница для absolute */
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -268,7 +268,7 @@ main {
 .hero-p-bottom{
     position: absolute;
     width: 100%;
-    bottom: 30px;
+    bottom: 30px; /* двигаем снизу на 30px */
     text-align: center; /* делает текст по середини, можно слева, справа сделать */
     text-transform: uppercase;/* делает текст заглавными */
     text-decoration: underline;/* делает нижнее подчеркиванием */

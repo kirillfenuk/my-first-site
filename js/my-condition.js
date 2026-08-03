@@ -68,7 +68,7 @@ if (ball >= 90) {
 
 
 
-// confirm стандартное  всплывающее окно с подтверждением  (Отменаа или  ОК)
+// confirm стандартное  всплывающее окно с подтверждением  (Отмена или  ОК)
 // Если выбрать  отмена будет значение false усли выбрать ОК то значение  переменной будет true
 /* let data = confirm('Перейти на страницу?') */
 
@@ -84,7 +84,7 @@ if (ball >= 90) {
 
 
 // Задание
-let role = prompt('Введиите свою роль (администратор, модератор, пользователь)')
+// let role = prompt('Введиите свою роль (администратор, модератор, пользователь)')
 
 
 // if (role == 'администратор') {
@@ -101,3 +101,152 @@ let role = prompt('Введиите свою роль (администрато�
 // }
 
 
+
+// Определение времени года по числу которое введёт пользователь
+// Number() - меняет тип данных в prompt() на числовое
+// в переменную month присваиваем значение которое ввел пользователь в prompt
+
+
+// две палочки || это или
+// на клавиатуре это над Enter кнопка или на букве "Э"
+
+
+// let month = Number(prompt('Введите номер месяца от 1 до 12, чтобы узнать какое это время года'))
+
+
+// if (month === 12 || month === 1 || month === 2) {
+//     console.log('Сейчас зима')
+// } else if (month === 3 || month === 4 || month === 5) {
+//     console.log('Сейчас весна')
+// } else if (month === 6 || month === 7 || month === 8) {
+//     console.log('Сейчас лето')
+// } else if (month === 9 || month === 10 || month === 11) {
+//     console.log('Сейчас осень')
+// } else {
+//     console.log('Вы ввели что-то не то')
+// }
+
+
+// Пример с логическими операторами
+// Определение статуса заказа
+// let orderStatus = 'Отправлен'
+
+
+// if (orderStatus === 'Ожидает оплаты' || orderStatus === 'Оплачен')
+//     console.log('Заказ находится в процессе обработки.')
+// else if (orderStatus === 'Отправлен' || orderStatus === 'Доставлен')
+//     console.log('Заказ находится в пути.')
+// else
+//     console.log('Статус заказа неизвестен.')
+
+// let status = prompt('Введите свой статус')
+// let age = Number(prompt('Введите свой возраст'))
+
+// if (age < 18 || status === 'студент') { 
+//     console.log('Ваша скидка 15%');
+// } else if (age > 65 || status === 'пенсионер') {
+//     console.log('Ваша скидка 20%');
+// } else {
+//     console.log('Ваша скидка 5%');
+// }
+
+
+
+
+// логический оператор "и" 
+// let age = Number(prompt('Введите свой возраст'))
+// let driverLicense = confirm('У вас есть водительские права?')
+
+// // && это И жёсткое условие
+// if (age >= 18 && driverLicense) {
+//     console.log('Вы можете управлять автомобилем');    
+// } else {
+//     console.log('Вы не можете управлять автомобилем');
+// }
+
+
+
+
+
+
+
+// let name = prompt('Введите своё имя')
+// let hour = Number(prompt('Введите время'))
+
+
+// if (hour >= 6 && hour < 12) {
+//     console.log(`Доброе утро ${name}`); 
+// } else if (hour >= 12 && hour < 18) {
+//     console.log(`Добрый день ${name}`);
+// } else if (hour >= 18 && hour < 23) {
+//     console.log(`Добрый вечер ${name}`);    
+// } else {
+//     console.log(`Доброй ночи ${name}`);
+// }
+
+
+
+// let validUsername = 'u123'
+// let validPassword = 'q123'
+
+
+// let login = prompt('Введите логин')
+// let password = prompt('Введите пароль')
+// let currentHour = Number(prompt('Введите число от 0 до 23'))
+
+// if (login == validUsername && password == validPassword) {
+//     if (currentHour >= 9 && currentHour < 19) {
+//        console.log('Вход разрешён'); 
+//     } else {
+//         console.log('Вход запрещен не рабочее время');
+//     }
+// } else {
+//     console.log('Вход запрещён');
+// }
+
+
+
+// parseFloat, parseInt
+// let price = parseFloat(promt('Ввдите цену товара:')) // может принять дробные числа
+// let number = parseInt(prompt('Введите число')) // может принять целые
+
+
+
+
+// Тернарный оператор-выражений
+// let number = 23
+// let result = number > 25 ? 'Число больше' : 'Число меньше'
+
+
+
+
+// let confirmed = confirm('Хотите ли вы купить животное?')
+// if (confirmed) {
+//     let catsAvaliable = 10
+//     let dogsAvaliable = 5
+//     let catsPrice = 1000
+//     let dogsPrice = 1500
+//     let animal = prompt('Какое животное вы хотите купить? (кошка или собака)').toLocaleLowerCase()
+
+//     let balance = Number(prompt('Сколько у вас денег'))
+//     if (animal === 'кошка') {
+//         if (catsAvaliable > 0) {
+//             alert('Поздравляем с покупкой!')
+//             catsAvaliable -= 1
+//             balance -= 1000
+//             alert(`Кошек осталось ${catsAvaliable}, у вас остьалось денег ${balance}`)
+//         } else {
+//             alert('Кошек нет')
+//         }
+//     } else if (animal === 'собака') {
+//         if (dogsAvaliable > 0) {
+//             alert('Поздравляем с покупкой!')
+//             dogsAvaliable -= 1
+//             alert(`Кошек осталось ${dogsAvaliable}`)
+//         } else {
+//             alert('Собак нет')
+//         }
+//     } else {
+//         alert('Спасибо, приходите ещё')
+//     }
+// }

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* Планировщик задач */
+        // Программа, которая позволяет добавлять, удалять и выводить задачи с использованием alert, prompt, а также функций и цикла while
+
+        // Сюда добавляются задачи которые пишем в promt()
+        let tasks = []
+
+
+        // Добавить когда выбрали – 1
+        function addTask() {
+            input = prompt()
+            tasks.push(input)
+        }
+
+
+        // Удалить когда выбрали – 2
+        function removeTask() {
+            input = Number('Введите номер задачи')
+            
+        }
+
+
+        // Показать когда выбрали – 3
+        function showTasks() {
+            if (tasks.length === 0) {
+                alert('Ваш список задач пока что пуст!')
+                return // Выходим из функции
+            }
+        }
+
+
+        // Цикл управления задачами
+        while (true) {
+            let choice = prompt('1 – Добавить задачу, 2 – Удалить задачу, 3 – Показать задачи, 4 – Выход')
+            if (choice == '1') {
+                addTask()
+            } else if (choice == '2') {
+                removeTask()
+            } else if (choice == '3') {
+                showTasks()
+            } else if (choice == '4') {
+                break
+            }
+            // Ниже будет запуск функций в зависимости от того какую цифру пользователь напишет в prompt()
+        }
+    </script>
+</body>
+
+</html>

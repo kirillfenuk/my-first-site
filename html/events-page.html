@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Базовые стили для страницы -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(38, 38, 38);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+        }
+    </style>
+
+    <!-- Самое простое событие которое работает прямо внутри HTML тега -->
+    <a href="#" onclick="alert('Вы нажали на ссылку')">Нажми на меня</a>
+
+
+
+
+
+    <button id="button-first">Нажми на меня и я пропаду</button>
+    <!-- <script>
+    // Старый вариант через onclick
+    // общаемся к кнопке по id
+    // если эту строку не писать то тоже будет работать потому что id="elem" это как глобальная переменная
+    let buttonFirst = document.getElementById('button-first')
+
+
+    buttonFirst.onclick = function () {
+        alert('Спасибо что нажали на меня, я удаляюсь')
+        buttonFirst.style.display = 'none'
+    }
+    </script> -->
+
+
+
+    <!-- Современное событие addEventListener -->
+    <script>
+        let buttonFirst = document.getElementById('button-first')
+
+        buttonFirst.addEventListener('click', () => {
+            alert('Спасибо что нажали на меня, я удаляюсь')
+            buttonFirst.style.display = 'none'
+        })
+    </script>
+
+    <!-- Самый короткий вариант -->
+    <script>
+        document.getElementById('button-first').addEventListener('click', () => {
+            alert('Спасибо что нажали на меня, я удаляюсь')
+            buttonFirst.style.display = 'none'
+        })
+    </script>
+
+
+
+
+
+
+
+
+
+
+    <!-- ==================== Мини магазин ========================== -->
+    <br><br><br>
+    <!--     <p>Очки солнцезащитные:</p>
+    <p id="products-quantity">0</p>
+    <button id="btn-buy">Купить</button> -->
+
+
+    <!--     <script>
+        let glases = 2
+        let btnBuy = document.getElementById('btn-buy')
+        let productsQuantity = document.getElementById('products-quantity')
+
+        productsQuantity.textContent = glases
+        btnBuy.addEventListener('click', () => {
+            glases -= 1
+            productsQuantity.textContent = glases
+            if (glases <= 0) {
+                productsQuantity.textContent = 'Нет товара'
+                productsQuantity.style.color = 'red'
+            }
+        })
+
+    </script> -->
+
+
+
+    <!-- ================ Другие основные HTML-атрибуты событий ================ -->
+    <!--
+
+
+   onclick – обычный клик
+   ondblclick – двойной клик
+
+
+   ondrag – когда перенёс на объект что-то и вызывается функция
+   ondragend – когда перетаскивал что-то мышкой, и перестал перетаскивать
+
+
+   onfocus – когда что-то становится активным (в фокусе), например поле ввода для input
+   onblur – потеря фокуса (когда вышел из фокуса из input например)
+
+
+   onmouseover или onmouseenter – навели мышку
+   onmouseout или onmouseleave – убрали мышку
+
+
+   onload – что-то происходит когда страница полностью загружена (часто применяют к <body>)
+
+
+   onmousedown – когда нажал на мышку и держишь её
+   onmouseup – когда нажал на мышку и отпустил и в момент отпускания что-то произойдёт
+   oncontextmenu – когда нажал ПКМ по объекту
+
+
+-->
+
+
+
+    <!-- ========================= Событие окна и прокрутки (window) ================================== -->
+    <!-- <script>
+    // Если мы где-то кликаем в любом месте страницы то в консоль выводится сообщение
+    window.addEventListener('click', () => {
+        console.log('Вы кликнули на экран');
+    })
+
+    // Изменение размера окна
+    window.addEventListener('resize', () => {
+        console.log('Ширина или высота экрана изменились');
+    })
+
+    // Событие загрузки страницы
+    window.addEventListener('load', () => {
+        console.log('Страница полностью загрузилась');
+    })
+
+    // Прокрутка
+    window.addEventListener('scroll', () => {
+        console.log('Полбзователь скролит страницу');
+    })
+</script> -->
+
+
+
+    <!-- <p id="pressing-quantity">0</p>
+<button id="bth-clicker">Нажми</button>
+
+
+<script>
+    let press = 0
+    let bthClicker = document.getElementById('bth-clicker')
+    let pressingQuantity = document.getElementById('pressing-quantity')
+
+    bthClicker.addEventListener('click', () => {
+        press += 1
+        pressingQuantity.textContent = press
+    })
+</script> -->
+
+
+
+
+
+    <!-- <div id="box" style="padding: 20px; background-color: darkblue; width: 300px;">
+   <p>Блок с контентом</p>
+</div>
+
+<button id="btn">Скрыть блок</button>
+
+<script>
+    let btn = document.getElementById('btn')
+    let box = document.getElementById('box')
+
+    btn.addEventListener('click', () => {
+        if (box.style.display == 'none') {
+            box.style.display = 'block'
+            btn.textContent = 'Скрыть блок'
+        } else {
+            box.style.display = 'none'
+            btn.textContent = 'Показать блок'
+        }
+    })
+    
+</script> -->
+
+
+
+<!--     <button id="program-launch">Запуск программы</button>
+
+    <script>
+        let programLaunch = document.getElementById('program-launch')
+
+        programLaunch.addEventListener('click', () => {
+            let n1 = Number(prompt('Введите первое число'))
+            let n2 = Number(prompt('Введите второе число'))
+            let n3 = Number(prompt('Введите третье число'))
+
+            console.log('Обработка данных... пожалуйста подождите 3 секунды')
+
+            setTimeout(() => {
+                let sum = n1 + n2 + n3;
+                console.log('Готово!');
+                console.log(`Результат сложения: ${sum}`);
+            }, 3000)
+        })
+    </script> -->
+
+
+<!--     <p id="text">Это обычный текст нажми на него</p>
+
+    <script>
+        let text = document.getElementById('text')
+
+        text.addEventListener('click', () => {
+            text.style.color = 'blue'
+            text.style.padding = '10px'
+            text.style.backgroundColor = 'white'
+        })
+    </script> -->
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="main-ul">
+        <li>Пункт</li>
+    </ul>
+
+
+    <script>
+        const mainUl = document.querySelector('#main-ul')
+
+        let newLiBefore = document.createElement('li')
+        newLiBefore.textContent = 'Новый пункт в начало списка'
+
+
+        let newLiAfter1 = document.createElement('li')
+        newLiAfter1.textContent = 'Новый пункт в конец списка'
+
+
+        let newLiAfter2 = document.createElement('li')
+        newLiAfter2.textContent = 'Новый пункт в конец списка'
+
+        mainUl.prepend(newLiBefore)
+        mainUl.append(newLiAfter1)
+        mainUl.append(newLiAfter2)
+    </script>
+
+
+    <ul id="second-main-ul">
+        <li>Первый пункт</li>
+    </ul>
+
+
+    <script>
+        let secondMainUl = document.getElementById('second-main-ul')
+
+        secondMainUl.insertAdjacentHTML('beforebegin', '<li style="color: red;">Перед списком</li>')
+        secondMainUl.insertAdjacentHTML('afterbegin', '<li style="color: green;">Вставка в начало</li>')
+        secondMainUl.insertAdjacentHTML('beforeend', '<li style="color: blue;">Вставка в конец</li>')
+        secondMainUl.insertAdjacentHTML('afterend', '<li style="color: yellow;">Вставка после родителя</li>')
+    </script>
+</body>
+
+</html>

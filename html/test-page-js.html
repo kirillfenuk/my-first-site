@@ -1,127 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: rgb(85, 80, 80);
-            color: white;
+        .create-block{
+            background-color: gray;
+            color: red;
         }
     </style>
 </head>
-
 <body>
-
-    <!-- <h2 id="first-h2">Lorem ipsum dolor sit amet.</h2>
-
-    <h2 id="result"></h2>
-
-    <h2 id="result2"></h2>
-
-    <h2 id="itog2"></h2> -->
-
-    <!-- <h2 id="privet"></h2> -->
-
-    <!-- Вставка итога вычеслениий в тег <b> который лежит в теги <p> -->
-    <!-- <h2> Итог равен <b id="result3" style="color: yellow;">0</b></h2> -->
-
-    <!-- document.write устаревший вариант, но ещё работает и иногда встречается в коде -->
-    <!-- <h2><script>document.write('Этот текст вставляется прямо в HTML', 3 + 2)</script></h2> -->
-
-    <!-- получаем путь до элементов -->
+    <!--Когда нажимаешь на кнопку в HTML "Создать блок" JS будет создавать новый div с текстом внутри и добавлять его просто в body через createElement  -->
+    <button id="btn">Кнопка</button>
+    <div style="background-color: black;"></div>
     <script>
-        // весь путь заносим сразу в переменную
-        const firstH2 = document.getElementById('first-h2') // Путь до тега h2 с id first-h2
-
-        console.log(firstH2);
+        let btn = document.getElementById('btn')
+        btn.addEventListener('click', () => {
+            let div = document.createElement('div')
+            document.body.appendChild(div)
+            div.textContent = 'Привет'
+            div.classList.add('create-block')
+        })
     </script>
-
-    <!-- textContent - вставка текста в HTML через JS -->
-    <script>
-        let a = 5
-        let b = 3
-        let sum = a + b
-
-        const result = document.getElementById('result') // то куда вставляем результат
-        const result3 = document.getElementById('result3')
-
-        result.textContent = `Результат: ${sum}` // textContent - для вставки только текста
-        result3.textContent = sum
-
-        // Или в некоторых случаях можно писать сокращенно (тоже будет работать)
-        // document.getElementById('result').textContent = `Результат: ${sum}` // Сокращенная запись
-    </script>
-
-    <!-- innerHtml - вставка текста в HTML через JS со стилями -->
-    <!-- <script>
-        let c = 10
-        let d = 15
-        let itog = c + d
-
-        const result2 = document.getElementById('result2')
-        result2.innerHTML = `Сумма: <b style="color: green">${itog}</b>` // innerHTML - стили с тегами
-
-        // Сокращенная запись
-        // document.getElementById('result2').innerHTML = `Сумма: <b style="color: green">${itog}</b>`
-     </script> -->
-
-    <!-- <script>
-
-        let x = Number(prompt())
-        let y = Number(prompt())
-        let summa = x + y
-
-        const itog2 = document.getElementById('itog2')
-        itog2.innerHTML = `Сумма: <b style="color: red">${summa}</b>`
-
-
-     </script> -->
-
-    <!-- <script>
-        let name = prompt('Введите своё имя')
-
-        const privet = document.getElementById('privet')
-        privet.innerHTML = `Привет ${name}`
-     </script> -->
-
-    <!-- ============== Изменение стилей элементов ==================== -->
-    <h2 id="title">Текст который меняет цвет при старте сайта</h2>
-    <script>
-        const title = document.getElementById('title')
-        // console.log(document.getElementById('title')); // Проверка на существование элемента
-
-
-        title.style.color = 'blue' // Меняем этому элементу style.color
-        title.style.backgroundColor = 'gray' // Слитно пишем CSS если там > 1 слова
-        title.style.padding = '20px'
-        title.style.textAlign = 'center'
-        title.textContent = 'Hello world'
-    </script>
-
-    <!-- Другие популярные обращения к элементам -->
-     <script>
-        console.log(document.documentElement) // Обращение к html тегу (который в самом вверху)
-        console.log(document.head) // Обращение на прямую к тегу head или body можно и т.д.
-        console.log(document.getElementsByTagName('body')) // Обращение к тегу body
-     </script>
-
-
-
-     <!-- querySelector самый уневерсальный способ -->
-      <script>
-        console.log(document.querySelector('h2')) // по тегу 
-        console.log(document.querySelector('#first')) // по id
-        console.log(document.querySelector('.some-class')) // по классу
-      </script>
 </body>
-
 </html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Создание новых элементов</h1>
+    <p style="margin-bottom: 30px;">Создание элементов до и после тега li</p>
+
+    <ul id="main-ul">
+        <li>Пункт</li>
+    </ul>
+
+    <script>
+        const mainUl = document.querySelector('#main-ul')
+
+        // Создаем новый первый элемент
+        let newLiBefore = document.createElement('li') // Создаем новый элемент li
+        newLiBefore.textContent = 'Новый пункт в начале списка' // Добавляем текст внутрь элемента
+
+
+        // Создаем новый второй элемент
+        let newLiAfter = document.createElement('li')
+        newLiAfter.textContent = 'Новый пункт в конец списка'
+
+
+        // Создаем новый  второй элемент
+        mainUl.prepend(newLiBefore) // Добавить новый элемент в начало списка
+        mainUl.append(newLiAfter) // Добавить новый элемент в конец списка
+    </script>
+
+
+    <h2>Вставка готового кода через insertAdjacentHTML</h2>
+    <ul id="second-main-ul">
+        <li>Первый пункт</li>
+    </ul>
+
+
+    <!-- Вставка кода в элементы -->
+     <script>
+        let secondMainUl = document.getElementById('second-main-ul')
+
+        // Вставляем кусок готового кода в конец элемента
+        secondMainUl.insertAdjacentHTML('beforebegin', '<li style="color: green;">Перед (до) родителем</li>')
+        secondMainUl.insertAdjacentHTML('afterbegin', '<li style="color: blue;">Вставка в начало</li>')
+        secondMainUl.insertAdjacentHTML('beforeend', '<li style="color: yellow;">Вставка в конец</li>')
+        secondMainUl.insertAdjacentHTML('afterend', '<li style="color: red;">Вставка после родителя</li>')
+
+
+      
+        
+        /* Вставка готового элемента */
+        let myElement = '<input type="text" id="my-input" placeholder="Фамилия">' 
+        secondMainUl.insertAdjacentHTML('beforeend', myElement) // Втавляем готовый код в конец элемента
+     </script>
+
+
+
+     <!-- Удаление -->
+      <button id="button-delete">🗑️</button>
+      <p id="text-1">Текст для удаления</p>
+
+
+      <script>
+        document.getElementById('button-delete').addEventListener('click', () => {
+            document.getElementById('text-1').remove() // Удаляем элемент, современный способ
+        })
+      </script>
+
+
+
+</body>
+</html>

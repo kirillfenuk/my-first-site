@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // for - самый базовый вариант
+        /* const numbers = [1, 2, 3, 4, 5] */
+
+        // цикл длится от 0 и до кол-ва элементов в массиве
+        // i < arr.length пока i не будет меньше чем кол-во элементов самого массива arr.length - кол-во элементов этого массива
+        for (let i = 0; i < numbers.length; i++) {
+            console.log(numbers[i])
+        }
+        console.log('\n');
+
+
+
+
+        // for .. of более простой вариант
+        for (const num of numbers) { // вместо num можно писать i для схожего стиля с for
+            console.log(num)
+        }
+
+
+    </script>
+
+
+
+    <script>
+        // Нужно вывести из массива numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] все четные числа
+
+        numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+        for (const num of numbers) {
+            if (num % 2 == 0) {
+                console.log(num)
+            }
+        }
+
+        console.log('\n');
+
+        for (const num of numbers) {
+            let result = num * num
+            console.log(result)
+
+        }
+
+        console.log('\n')
+
+
+
+
+
+
+
+
+        let arr = [5, 6, 'Hello', 'Hi', true, 9]
+
+        // item - текущий обрабатывемый элемент в массиве
+        // i - (необязательный) индекс текущего обрабатываемого элемента в массиве
+        // array - (необязательный) массив по которому осуществляется проход
+        arr.forEach(function (item, i, array) {
+            console.log(`Элемент №${i}: ${item} из массива \t\t ${arr}`)
+        })
+
+        console.log('\n');
+
+
+
+
+        /* ====================== froEach можно записывать через три варианта: ============================== */
+
+        const cities = ['Mos', 'NN', 'Vladimir', 'Kazan', 'SPB']
+
+        // Самый простой способ. Он сам всё напишет когда напишешь слово forEach и нажмешь
+        console.log('===================== Самый простой способ ==========================');
+        cities.forEach(e => {
+            console.log(e)
+        })
+        console.log('\n')
+
+        // С дополнительными параметрами
+        cities.forEach((element, i) => {
+            console.log(`Элемент №${i} - ${element}`)
+        })
+        console.log('\n')
+
+        // Без стрелочной функции
+        cities.forEach(function (element, i) {
+            console.log(`Элемент №${i} - ${element}`)
+        })
+
+
+
+
+
+
+
+
+        /* ============ Поиск ========= */
+
+        /* includes - выводит только true или false */
+        const fruits = ['apple', 'banana', 'orange']
+        
+        // Выводит true если в массиве есть элемент с названием banana
+        console.log(fruits.includes('banana'))
+
+
+
+        /* find - полноценный поиск */
+
+        const result = fruits.find((fruit) => {
+            return fruit === 'banana'
+        })
+
+        console.log(result)
+
+
+    </script>
+
+    <!-- <script>
+        const cities = ['Mos', 'NN', 'Vladimir', 'Kazan', 'SPB']
+
+        cities.unshift('Sam')
+
+        cities.push('EKB')
+
+        cities.pop()
+
+        cities.shift()
+
+        for (let i = 0; i < cities.length; i++) {
+            console.log(cities[i])
+        }
+        console.log('\n')
+
+        for (const num of cities) {
+            console.log(num)
+        }
+        console.log('\n')
+
+        cities.forEach(e => {
+            console.log(e)
+        })
+
+    </script> -->
+</body>
+
+</html>

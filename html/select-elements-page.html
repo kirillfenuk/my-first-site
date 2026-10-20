@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ====================== Обращение к множеству элементам через querySelectorAll =============== -->
+
+<!-- 
+    <h1 id="first" style="color: green;">Тест querySelectorAll</h1>
+    <h2>Текст второго заголовка</h2>
+    <p class="some">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, modi!</p>
+    <p class="some">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, modi!</p>
+    <p class="some">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, modi!</p> -->
+    
+
+    <!-- Развернутая запись -->
+<!--      <script>
+        let paragraphs = document.querySelectorAll('.some') // Все элементы с классом some
+        console.log(paragraphs)
+
+        //Меняем стили для всех этих элементов
+/*         paragraphs.forEach(element => {
+            element.style.color = 'red'
+        }) */
+
+
+        let p = document.querySelectorAll('p')
+        p.forEach(element => {
+            element.addEventListener('click', () => {
+                element.style.color = 'red'
+            })
+        })
+        
+     </script> -->
+
+<!--      <script>
+        document.addEventListener('click', (event) => {
+            // Проверяем, что клик был именно по H1
+            if (event.target.tagName === 'H1') {
+                event.target.style.color = 'red'
+            }
+        })
+     </script> -->
+
+
+     <!-- Более короткая запись -->
+<!--       <script>
+        document.querySelectorAll('.some').forEach(e => { // e - сокращение element
+            e.style.color = 'blue'
+        })
+
+        // Можем обратиться сразу к нескольким тегам или классам
+        document.querySelectorAll('p, h1, h2').forEach(e => {
+            e.style.color = 'black'
+        }
+        )
+      </script> -->
+
+
+
+    
+      <p>Первый текст</p>
+      <p>Второй текст</p>
+      <p>Третий текст</p>
+      <button id="btnSize">Увеличивает размер всем параграфам</button>
+
+
+      <script>
+        let allP = document.querySelectorAll('p')
+
+        // При нажатии на кнопку
+        document.getElementById('btnSize').addEventListener('click', () => {
+            // Переебираем все P через for
+            for (let i = 0; i < allP.length; i++) {
+                allP[i].style.fontSize = '32px'
+            }
+            
+            // Перебираем все P через for .. of
+            for (const e of allP) {
+                e.style.fontSize = '32px'
+            }
+
+
+            // Или перебираем все P через forEach
+            allP.forEach(e => {e.style.fontSize = '32px'})
+        })
+      </script>
+
+
+
+
+      <div class="block">Просто текст в блоке</div>
+
+      <script>
+        let div = document.querySelector('.block')
+        
+        function changeText() {
+            div.textContent = 'Другой текст'
+        }
+        div.addEventListener('click', changeText)
+        
+        div.addEventListener('mouseout', () => {
+            div.textContent = 'Это тоже другой'
+        })
+      </script>
+
+</body>
+</html>

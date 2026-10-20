@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>LocalStorage</h1>
+    <p>LocalStorage - это локальное сохранение данных в браузере пользователя</p>
+
+    <script>
+        // setItem() - устанавливает новое значение в localStorage
+        // getItem() - получает значение из localStorage
+        localStorage.setItem('ключ', 'значение для ключа') // тут всегда важно указывать ТОЛЬКО строки
+        console.log(localStorage.getItem('ключ')) // выведет "значение ключа" 
+
+        localStorage.setItem('name', 'Alex')
+        console.log(localStorage.getItem('name'))
+
+        // clear() - полностью очищает localStorage
+        localStorage.clear()
+        console.log(localStorage.getItem('ключ')) // будет null уже не выведет данныу потому что они удалены
+
+        // key() - возвращает ключ по индексу
+        localStorage.setItem('name', 'Alex')
+        localStorage.setItem('age', '29')
+        console.log(localStorage.key(0)) // первый ключ
+        console.log(localStorage.key(1)) // второй ключ
+
+
+        // length - показывает кол-во сохраненных данных
+        console.log(localStorage.length) // например 2
+
+        // removeItem() - удаление элемента из localStorage
+        localStorage.removeItem('name')
+        console.log(localStorage.getItem('name')) // null
+        
+        
+
+
+
+        let arr = ['Первая', 'Вторая', 'Третья']
+
+        // превращает массив в строку
+        let str = JSON.stringify(arr)
+        console.log(str)
+        // '["Первая","Вторая","Третья"]'
+        
+        // превращаем обратно в массив
+        let arrBack = JSON.parse(str)
+        console.log(arrBack)
+        // ['Первая', 'Вторая', 'Третья']
+
+
+        let number = [1, 2, 3]
+
+        let strNum = JSON.stringify(number)
+        console.log(strNum)
+
+        let strNumBack = JSON.parse(strNum)
+        console.log(strNumBack)
+
+        let strNum2 = JSON.stringify(number)
+        console.log(strNum)
+        
+        
+        
+        
+    </script>
+</body>
+</html>

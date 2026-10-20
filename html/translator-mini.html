@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Переводчик мини</h1>
+    <p>Чуть позже создадим полноценное приложение которое будет с интерфейсом</p>
+    <p id="itog"></p>
+
+    <script>
+        let itog = document.getElementById('itog')
+        const dictionary = {
+            'привет': 'hello',
+            'мир': 'world'
+        }
+
+        // Доп. параметр word принисает значение из prompt ниже
+        function translate(word) {
+            let translation = dictionary[word] // Пытаемся найти перевод по имени ключа вместо id
+            if (translation !== undefined) {   // Если слово найдено
+                return translation             // Возращаем перевод
+            } else {                           // Если слово не найдено
+                return 'слово не найдено'      // Возращаем сообщение об ошибке
+            }
+        }
+
+
+        // Запрашиваем слово у пользователя и приводим его к нижнему регистру
+        let userWord = prompt('Введите слово для перевода (привет или мир):').toLowerCase()
+
+        // Запускаем функцию прямо в console.log
+/*         console.log('Результат перевода:', translate(userWord)) */
+
+        itog.textContent = 'Результат вывода: ' + translate(userWord)
+        
+    </script>
+</body>
+</html>
